@@ -349,6 +349,51 @@
             }
         }
         
+        /* Scrolling Text Animation */
+        .scrolling-text {
+            display: inline-block;
+            animation: scrollText 15s linear infinite;
+        }
+        
+        @keyframes scrollText {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .scrolling-text:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Marquee Container */
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 20s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+        
         /* Particle Effects */
         #hero-particles {
             pointer-events: none;
@@ -719,9 +764,11 @@
 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10 animate-fade-in-up" style="opacity: 0;"></div>
 <div class="max-w-container-max mx-auto w-full px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-20 animate-fade-in-up" style="opacity: 0;">
 <div class="animate-fade-in-up order-2 md:order-1">
-<span class="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-sm text-label-sm mb-6 uppercase tracking-widest">
-                        Nền tảng học tập 4.0
+<div class="marquee inline-block mb-6">
+<span class="marquee-content px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-sm text-label-sm uppercase tracking-widest">
+                        NỀN TẢNG HỌC TẬP 4.0 ✨ NỀN TẢNG HỌC TẬP 4.0 ✨ NỀN TẢNG HỌC TẬP 4.0 ✨
                     </span>
+</div>
 <h1 class="font-display-xl text-display-xl-mobile md:text-display-xl leading-tight mb-6">
                         KhmerKid – Nền tảng học chữ Khmer <span class="text-primary italic glow-pulse">thông minh</span>
 </h1>
@@ -1050,19 +1097,19 @@
 <h3 class="font-headline-md mb-6">Thông tin Đồ án Tốt nghiệp</h3>
 <div class="space-y-4 text-on-surface-variant font-body-md">
 <p class=""><strong class="text-on-surface">Đề tài:</strong> Nền tảng học chữ Khmer thông minh cho học sinh tiểu học 'KhmerKid'</p>
-<p class=""><strong class="text-on-surface">Cơ sở đào tạo:</strong> Trường Đại học Trà Vinh (TVU)</p>
+<p class=""><strong class="text-on-surface">Cơ sở đào tạo:</strong> Đại học Trà Vinh (TVU)</p>
 </div>
 </div>
 <div class="grid grid-cols-2 gap-8 border-l border-white/10 md:pl-12">
 <div>
 <p class="text-primary font-label-sm uppercase mb-2">Sinh viên thực hiện</p>
-<p class="font-headline-md text-lg">Nguyễn Văn A</p>
-<p class="text-on-surface-variant text-sm">MSSV: 110120123</p>
+<p class="font-headline-md text-lg">Lâm Văn Na</p>
+<p class="text-on-surface-variant text-sm">MSSV: 110122116</p>
 </div>
 <div>
 <p class="text-secondary font-label-sm uppercase mb-2">Giảng viên hướng dẫn</p>
-<p class="font-headline-md text-lg">ThS. Lê Văn B</p>
-<p class="text-on-surface-variant text-sm">Khoa Kỹ thuật &amp; Công nghệ</p>
+<p class="font-headline-md text-lg"></p>
+<p class="text-on-surface-variant text-sm">Trường Kỹ thuật &amp; Công nghệ</p>
 </div>
 </div>
 </div>

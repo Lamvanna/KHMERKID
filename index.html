@@ -1,0 +1,1379 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
+<meta name="theme-color" content="#121223"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<title>KhmerKid - Nền tảng học chữ Khmer thông minh</title>
+<meta name="description" content="Học phụ âm, nguyên âm, ghép vần, luyện nghe, luyện nói, luyện viết và chơi trò chơi giáo dục với KhmerKid - Nền tảng học chữ Khmer thông minh cho học sinh tiểu học"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "surface-container-lowest": "#0c0c1d",
+                      "background": "#121223",
+                      "primary-fixed-dim": "#d0bcff",
+                      "outline": "#958ea0",
+                      "on-background": "#e3e0f9",
+                      "on-secondary-fixed": "#001f26",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "outline-variant": "#494454",
+                      "inverse-primary": "#6d3bd7",
+                      "on-surface": "#e3e0f9",
+                      "primary-fixed": "#e9ddff",
+                      "on-tertiary-container": "#3e2400",
+                      "secondary-container": "#03b5d3",
+                      "inverse-surface": "#e3e0f9",
+                      "surface-container-highest": "#333346",
+                      "on-primary": "#3c0091",
+                      "tertiary-fixed": "#ffddb8",
+                      "on-tertiary": "#472a00",
+                      "primary": "#d0bcff",
+                      "on-secondary-container": "#00424e",
+                      "secondary-fixed": "#acedff",
+                      "on-primary-fixed": "#23005c",
+                      "primary-container": "#a078ff",
+                      "on-error": "#690005",
+                      "surface": "#121223",
+                      "on-primary-fixed-variant": "#5516be",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "surface-dim": "#121223",
+                      "surface-bright": "#38374a",
+                      "on-primary-container": "#340080",
+                      "surface-tint": "#d0bcff",
+                      "error": "#ffb4ab",
+                      "secondary": "#4cd7f6",
+                      "on-surface-variant": "#cbc3d7",
+                      "on-error-container": "#ffdad6",
+                      "tertiary": "#ffb95f",
+                      "surface-container-low": "#1a1a2b",
+                      "surface-container-high": "#28283b",
+                      "inverse-on-surface": "#2f2f41",
+                      "surface-variant": "#333346",
+                      "surface-container": "#1e1e30",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed": "#2a1700",
+                      "on-secondary": "#003640",
+                      "tertiary-container": "#ca8100",
+                      "on-secondary-fixed-variant": "#004e5c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "container-max": "1200px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Geist"],
+                      "headline-md": ["Geist"],
+                      "display-xl-mobile": ["Geist"],
+                      "display-xl": ["Geist"],
+                      "label-sm": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "label-md": ["Geist"],
+                      "body-md": ["Geist"],
+                      "body-lg": ["Geist"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                      "display-xl-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-xl": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0A0A1B;
+            color: #e3e0f9;
+            overflow-x: hidden;
+            font-family: 'Geist', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Glass Card Effects */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Glow Effects */
+        .glow-purple {
+            box-shadow: 0 0 60px rgba(208, 188, 255, 0.3),
+                        0 0 100px rgba(208, 188, 255, 0.15);
+            transition: box-shadow 0.4s ease;
+        }
+        
+        .glow-purple:hover {
+            box-shadow: 0 0 80px rgba(208, 188, 255, 0.5),
+                        0 0 120px rgba(208, 188, 255, 0.25);
+        }
+        
+        /* Header Specific Styles */
+        header {
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background: rgba(18, 18, 35, 0.95);
+            backdrop-filter: blur(30px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        header nav a {
+            position: relative;
+            padding-bottom: 4px;
+        }
+        
+        header nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #d0bcff, #4cd7f6);
+            transition: width 0.3s ease;
+        }
+        
+        header nav a:hover::after {
+            width: 100%;
+        }
+        
+        header button {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        header button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        header button span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Animation */
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(40px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(2deg); }
+            50% { transform: translateY(-20px) rotate(-2deg); }
+        }
+        
+        /* Button Hover Effects */
+        button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        button::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        button:hover::after {
+            transform: translateX(100%);
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #d0bcff, #4cd7f6, #ffb95f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        /* Typing Animation for Hero Text */
+        .typing-animation {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(20, end) infinite, blink 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            0%, 100% {
+                width: 0;
+            }
+            50%, 90% {
+                width: 100%;
+            }
+        }
+        
+        @keyframes blink {
+            from, to {
+                border-right: 3px solid transparent;
+            }
+            50% {
+                border-right: 3px solid #d0bcff;
+            }
+        }
+        
+        /* Wave Animation */
+        .wave-text {
+            display: inline-block;
+            animation: wave 2s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Fade In Slide */
+        .fade-slide-in {
+            animation: fadeSlideIn 1s ease-out forwards;
+        }
+        
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Glow Pulse Animation */
+        .glow-pulse {
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(208, 188, 255, 0.5),
+                             0 0 20px rgba(208, 188, 255, 0.3),
+                             0 0 30px rgba(208, 188, 255, 0.2);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(208, 188, 255, 0.8),
+                             0 0 30px rgba(208, 188, 255, 0.6),
+                             0 0 40px rgba(208, 188, 255, 0.4);
+            }
+        }
+        
+        /* Particle Effects */
+        #hero-particles {
+            pointer-events: none;
+            mix-blend-mode: screen;
+        }
+        
+        /* Perspective */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #121223;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #d0bcff, #4cd7f6);
+            border-radius: 6px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #a078ff, #03b5d3);
+        }
+        
+        /* Card Interactions */
+        .interactive-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .interactive-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        
+        /* Loading Animation */
+        @keyframes pulse-glow {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        
+        /* Section Divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(208, 188, 255, 0.3), transparent);
+            margin: 64px 0;
+        }
+        
+        /* Enhanced Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        
+        /* Mobile Menu Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+            
+            /* Better touch targets */
+            button, a {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Reduce motion for mobile */
+            .float-animation {
+                animation: none;
+            }
+            
+            /* Optimize hero section for mobile */
+            #hero {
+                min-height: 100vh;
+                height: auto;
+                padding: 120px 0 60px;
+            }
+            
+            /* Stack sections better */
+            section {
+                padding: 48px 0 !important;
+            }
+            
+            /* Better card spacing */
+            .glass-card {
+                padding: 20px !important;
+            }
+            
+            /* Optimize grid for mobile */
+            .grid {
+                gap: 16px !important;
+            }
+            
+            /* Better button sizing */
+            button {
+                padding: 12px 24px !important;
+                font-size: 14px !important;
+            }
+            
+            /* Reduce blur for performance */
+            .glass-card {
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            
+            header {
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+            }
+            
+            /* Better mobile typography */
+            h1 {
+                font-size: 32px !important;
+                line-height: 1.2 !important;
+            }
+            
+            h2 {
+                font-size: 28px !important;
+                line-height: 1.3 !important;
+            }
+            
+            h3 {
+                font-size: 20px !important;
+            }
+            
+            p {
+                font-size: 16px !important;
+                line-height: 1.6 !important;
+            }
+            
+            /* Optimize images */
+            [style*="background-image"] {
+                background-size: cover;
+                background-position: center;
+            }
+            
+            /* Better mobile footer */
+            footer {
+                padding: 40px 24px !important;
+            }
+            
+            /* Mobile navigation improvements */
+            #mobile-menu {
+                animation: slideIn 0.3s ease-out;
+            }
+            
+            /* Better spacing for mobile stats */
+            .grid.grid-cols-2 {
+                gap: 12px !important;
+            }
+            
+            /* Optimize particle count for mobile */
+            #hero-particles {
+                opacity: 0.5;
+            }
+        }
+        
+        /* Tablet optimizations */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .max-w-container-max {
+                max-width: 90%;
+            }
+            
+            section {
+                padding: 64px 0 !important;
+            }
+        }
+        
+        /* Smooth transitions for all interactive elements */
+        button, a, .glass-card {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Better mobile menu */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        #mobile-menu:not(.hidden) {
+            max-height: 500px;
+        }
+        
+        /* Focus Styles */
+        *:focus-visible {
+            outline: 2px solid #d0bcff;
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+        
+        /* Selection */
+        ::selection {
+            background: rgba(208, 188, 255, 0.3);
+            color: #ffffff;
+        }
+        
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #d0bcff, #4cd7f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(208, 188, 255, 0.4);
+            z-index: 999;
+        }
+        
+        @media (min-width: 768px) {
+            #back-to-top {
+                width: 56px;
+                height: 56px;
+                bottom: 32px;
+                right: 32px;
+            }
+        }
+        
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+        
+        #back-to-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(208, 188, 255, 0.6);
+        }
+        
+        #back-to-top:active {
+            transform: scale(0.95);
+        }
+        
+        /* Animated Background Blobs */
+        @keyframes blob {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+        }
+        
+        .blob {
+            animation: blob 7s infinite;
+        }
+        
+        .blob-delay-1 {
+            animation-delay: 2s;
+        }
+        
+        .blob-delay-2 {
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-on-primary">
+<!-- Enhanced TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/3 backdrop-blur-xl border-b border-white/10 px-gutter py-5">
+<div class="max-w-container-max mx-auto flex justify-between items-center">
+<!-- Logo Section -->
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg overflow-hidden group-hover:scale-110 transition-transform duration-300">
+<img src="Logo App.png" alt="KhmerKid Logo" class="w-full h-full object-cover"/>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface gradient-text">KhmerKid</div>
+</div>
+
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="#features">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                        Features
+                    </span>
+</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="#showcase">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">photo_library</span>
+                        Showcase
+                    </span>
+</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="#download">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Download
+                    </span>
+</a>
+</nav>
+
+<!-- CTA Button -->
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex bg-gradient-to-r from-primary to-secondary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md font-bold active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl items-center gap-2" onclick="window.location.href='app-arm64-v8a-release.apk'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">download</span>
+<span>Tải APK</span>
+</button>
+
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+</div>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-surface-container/95 backdrop-blur-xl border-b border-white/10 shadow-2xl">
+<nav class="max-w-container-max mx-auto px-gutter py-6 flex flex-col gap-4">
+<a class="text-on-surface-variant font-medium hover:text-primary hover:bg-white/5 transition-all duration-300 font-label-md text-label-md px-4 py-3 rounded-xl flex items-center gap-3" href="#features">
+<span class="material-symbols-outlined">auto_awesome</span>
+                    Features
+                </a>
+<a class="text-on-surface-variant font-medium hover:text-primary hover:bg-white/5 transition-all duration-300 font-label-md text-label-md px-4 py-3 rounded-xl flex items-center gap-3" href="#showcase">
+<span class="material-symbols-outlined">photo_library</span>
+                    Showcase
+                </a>
+<a class="text-on-surface-variant font-medium hover:text-primary hover:bg-white/5 transition-all duration-300 font-label-md text-label-md px-4 py-3 rounded-xl flex items-center gap-3" href="#download">
+<span class="material-symbols-outlined">download</span>
+                    Download
+                </a>
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary px-6 py-3 rounded-xl font-label-md text-label-md font-bold active:scale-95 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 mt-2" onclick="window.location.href='app-arm64-v8a-release.apk'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">download</span>
+                    Tải APK
+                </button>
+</nav>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen min-h-[800px] flex items-center overflow-hidden" id="hero">
+<!-- Animated Background Blobs -->
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] blob"></div>
+<div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/15 rounded-full blur-[120px] blob blob-delay-1"></div>
+<div class="absolute top-1/2 right-1/3 w-64 h-64 bg-tertiary/10 rounded-full blur-[80px] blob blob-delay-2"></div>
+
+<canvas class="absolute inset-0 w-full h-full z-[5]" id="hero-particles"></canvas>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10 animate-fade-in-up" style="opacity: 0;"></div>
+<div class="max-w-container-max mx-auto w-full px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-20 animate-fade-in-up" style="opacity: 0;">
+<div class="animate-fade-in-up order-2 md:order-1">
+<span class="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-sm text-label-sm mb-6 uppercase tracking-widest">
+                        Nền tảng học tập 4.0
+                    </span>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl leading-tight mb-6">
+                        KhmerKid – Nền tảng học chữ Khmer <span class="text-primary italic glow-pulse">thông minh</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-10 leading-relaxed">
+                        Học phụ âm, nguyên âm, ghép vần, luyện nghe, luyện nói, luyện viết và chơi trò chơi giáo dục trong một trải nghiệm học tập sinh động, trực quan và hiện đại.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary rounded-xl font-bold hover:glow-purple transition-all duration-300 active:scale-95 flex items-center justify-center gap-3 shadow-lg" onclick="window.location.href='app-arm64-v8a-release.apk'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">download</span>
+                            Tải KhmerKid cho Android
+                        </button>
+<button class="px-8 py-4 glass-card text-on-surface rounded-xl font-bold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">play_circle</span>
+                            Xem video demo
+                        </button>
+</div>
+</div>
+<div class="relative perspective-1000 order-1 md:order-2">
+<div class="float-animation">
+<div class="w-64 sm:w-72 h-[520px] sm:h-[600px] mx-auto glass-card rounded-[40px] border-[12px] border-surface-container-highest shadow-2xl relative overflow-hidden transition-transform duration-500 hover:scale-105">
+<div class="w-full h-full bg-cover bg-center" data-alt="KhmerKid app home screen showing learning progress with Khmer characters, lesson cards, and progress tracking" style="background-image: url('Screenshot_2026-06-27-02-27-57-93_9411ce698830dceb292d2084e7c1ed83.jpg')"></div>
+</div>
+</div>
+<!-- Decorative Orbs -->
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/20 rounded-full blur-[100px] z-[-1] hidden md:block"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/10 rounded-full blur-[120px] z-[-1] hidden md:block"></div>
+</div>
+</div>
+</section>
+<!-- Product Overview -->
+<section class="py-32 bg-background relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter text-center mb-24 animate-fade-in-up" style="opacity: 0;">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">Trải nghiệm học tập thế hệ mới</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    KhmerKid không chỉ là một ứng dụng; đó là sự kết hợp hoàn hảo giữa hình ảnh trực quan, âm thanh chân thực, công nghệ nhận diện chữ viết tay AI và hệ thống phần thưởng lôi cuốn.
+                </p>
+</div>
+<div class="max-w-container-max mx-auto px-gutter animate-fade-in-up" style="opacity: 0;">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-all duration-500">
+<div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl">visibility</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Trực quan hóa</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Học qua hình ảnh sinh động giúp các em ghi nhớ mặt chữ lâu hơn và yêu thích việc học hơn.</p>
+</div>
+<div class="glass-card p-8 rounded-3xl group hover:border-secondary/50 transition-all duration-500">
+<div class="w-16 h-16 bg-secondary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-4xl">mic</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Âm thanh chuẩn</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Luyện nghe và phát âm theo giọng đọc bản xứ chuẩn, được kiểm định kỹ lưỡng.</p>
+</div>
+<div class="glass-card p-8 rounded-3xl group hover:border-tertiary/50 transition-all duration-500">
+<div class="w-16 h-16 bg-tertiary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-4xl">stars</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Gamification</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Hệ thống Sao và XP biến mỗi bài học thành một thử thách thú vị, đầy hứng khởi.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="py-32 bg-surface-container-lowest relative" id="features">
+<div class="max-w-container-max mx-auto px-gutter animate-fade-in-up" style="opacity: 0;">
+<div class="flex items-end justify-between mb-16">
+<div class="max-w-xl">
+<span class="text-secondary font-label-md text-label-md uppercase tracking-wider mb-4 block">Hệ thống bài học</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Lộ trình học tập toàn diện</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Feature Cards -->
+<div class="glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border-l-4 border-l-primary group">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">abc</span>
+<h4 class="font-headline-md text-headline-md text-lg mb-2">Học phụ âm</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Làm quen với 33 phụ âm Khmer qua hình ảnh minh họa sống động.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border-l-4 border-l-secondary group">
+<span class="material-symbols-outlined text-secondary mb-4 text-3xl">translate</span>
+<h4 class="font-headline-md text-headline-md text-lg mb-2">Học nguyên âm</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Phân biệt nguyên âm độc lập và nguyên âm ghép linh hoạt.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border-l-4 border-l-tertiary group">
+<span class="material-symbols-outlined text-tertiary mb-4 text-3xl">join_inner</span>
+<h4 class="font-headline-md text-headline-md text-lg mb-2">Ghép vần</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Quy tắc ghép phụ âm và nguyên âm thành từ có nghĩa.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border-l-4 border-l-primary group">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">hearing</span>
+<h4 class="font-headline-md text-headline-md text-lg mb-2">Luyện nghe</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Nghe và nhận diện âm tiết thông qua các bài tập tương tác.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border-l-4 border-l-secondary group">
+<span class="material-symbols-outlined text-secondary mb-4 text-3xl">smart_toy</span>
+<h4 class="font-headline-md text-headline-md text-lg mb-2">Luyện nói (AI)</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Công nghệ AI đánh giá phát âm ngay lập tức để cải thiện kỹ năng.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border-l-4 border-l-tertiary group">
+<span class="material-symbols-outlined text-tertiary mb-4 text-3xl">edit_note</span>
+<h4 class="font-headline-md text-headline-md text-lg mb-2">Luyện viết</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Học cách viết từng nét chữ theo quy chuẩn của người bản xứ.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border-l-4 border-l-primary group">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">sports_esports</span>
+<h4 class="font-headline-md text-headline-md text-lg mb-2">Trò chơi</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Vừa học vừa chơi với kho tàng mini-games đa dạng.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border-l-4 border-l-secondary group">
+<span class="material-symbols-outlined text-secondary mb-4 text-3xl">military_tech</span>
+<h4 class="font-headline-md text-headline-md text-lg mb-2">Sao &amp; XP</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Tích lũy điểm thưởng để mở khóa các cấp độ và trang bị mới.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl hover:scale-105 transition-all duration-300 border-l-4 border-l-tertiary group">
+<span class="material-symbols-outlined text-tertiary mb-4 text-3xl">insights</span>
+<h4 class="font-headline-md text-headline-md text-lg mb-2">Theo dõi tiến độ</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Báo cáo chi tiết kết quả học tập cho giáo viên và phụ huynh.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- AI & Learning Spotlight -->
+<section class="py-32 relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle,rgba(208,188,255,0.05)_0%,transparent_70%)] pointer-events-none animate-fade-in-up" style="opacity: 0;"></div>
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-20 items-center animate-fade-in-up" style="opacity: 0;">
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
+<div class="relative glass-card rounded-[32px] p-8 aspect-square flex items-center justify-center border-white/20">
+<div class="text-center">
+<span class="material-symbols-outlined text-primary text-[120px] opacity-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">psychology</span>
+<div class="relative z-10 space-y-6">
+<div class="w-48 h-48 mx-auto border-2 border-dashed border-primary/40 rounded-full flex items-center justify-center p-4">
+<div class="w-full h-full bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">draw</span>
+</div>
+</div>
+<div class="bg-surface-container-high px-6 py-3 rounded-full inline-block border border-white/10 shadow-xl">
+<p class="text-secondary font-bold">98% Độ chính xác AI</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">Công nghệ AI đồng hành cùng bé</h2>
+<div class="space-y-10">
+<div class="flex gap-6">
+<div class="w-12 h-12 bg-primary/20 rounded-full flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">edit</span>
+</div>
+<div>
+<h4 class="font-headline-md text-xl mb-2">Nhận diện chữ viết tay</h4>
+<p class="font-body-md text-on-surface-variant">KhmerKid sử dụng thuật toán thông minh để phân tích nét vẽ của trẻ, hướng dẫn trẻ viết đúng quy trình và đẹp hơn mỗi ngày.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 bg-secondary/20 rounded-full flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">record_voice_over</span>
+</div>
+<div>
+<h4 class="font-headline-md text-xl mb-2">Phản hồi phát âm tức thì</h4>
+<p class="font-body-md text-on-surface-variant">Bé sẽ được chấm điểm phát âm ngay lập tức. Hệ thống sẽ nhẹ nhàng nhắc nhở và khuyến khích bé phát âm lại cho đúng.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 bg-tertiary/20 rounded-full flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">auto_awesome</span>
+</div>
+<div>
+<h4 class="font-headline-md text-xl mb-2">Lộ trình cá nhân hóa</h4>
+<p class="font-body-md text-on-surface-variant">Ứng dụng tự động điều chỉnh độ khó dựa trên tiến trình thực tế, đảm bảo bé luôn được thử thách vừa đủ để không nản chí.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- App Showcase -->
+<section class="py-32 bg-surface-container-lowest" id="showcase">
+<div class="max-w-container-max mx-auto px-gutter text-center mb-20 animate-fade-in-up" style="opacity: 0;">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">Giao diện sinh động, thân thiện</h2>
+<p class="text-on-surface-variant font-body-lg">Thiết kế dành riêng cho lứa tuổi học sinh tiểu học với màu sắc tươi sáng và thao tác đơn giản.</p>
+</div>
+<div class="overflow-hidden py-12 animate-fade-in-up" style="opacity: 0;">
+<div class="flex gap-12 px-gutter animate-marquee whitespace-nowrap perspective-1000">
+<!-- Screen 1 -->
+<div class="inline-block w-64 h-[500px] glass-card rounded-[32px] overflow-hidden border-white/20 flex-shrink-0 shadow-2xl transition-transform duration-500 hover:scale-110 hover:rotate-x-6 hover:rotate-y-6">
+<div class="w-full h-full bg-cover bg-center" data-alt="Screenshot of the Home screen of the KhmerKid app. It features a lush, illustrated landscape background with floating island levels representing different learning modules. A cute cartoon character is at the center, and a progress bar with a purple glow is at the top. The design is modern, professional, and playful." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEgxu-S0GxE4mEN2sJIVmToHezhlwJuiMJy6b1kXeSYc8LwkIA3eGwrGu_HwDVjSYDnvavJ2PaDB7KVI8FyCg3EVnX0l4ANpJ0Qmg68h-MD-bbsOpAcbSauFR-L58RbcDvQ7098ftVgZW5mMl7OLXV6ZHYQY0H0ZVEglI9-6zcfKyEHRlsSVSBzS7B1fBI82YNHKlaBHFkQS0DmjHhU3HCK0XIpsIt-l1AH731FQfm6lsyKg2VApJD')"></div>
+</div>
+<!-- Screen 2 -->
+<div class="inline-block w-64 h-[500px] glass-card rounded-[32px] overflow-hidden border-white/20 flex-shrink-0 shadow-2xl transition-transform duration-500 hover:scale-110 hover:rotate-x-6 hover:rotate-y-6">
+<div class="w-full h-full bg-cover bg-center" data-alt="Screenshot of a handwriting practice lesson in the KhmerKid app. A large Khmer character is displayed with animated dashed lines and arrows showing the correct stroke order. The background is a clean white/blue gradient with glassmorphism UI buttons for 'Repeat' and 'Done'. Dark mode aesthetic with high-key glowing accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDn3OeBMbwq04PAlQO22wngtqJM-wTKPqosYI7qtM1XABBGS-DM3KjMdYcjMwKHRbiDGP856rsHr42eL58tXTjNE0b_jNXdcJLmZWV2zt5Ekt_USW-DDlcUdHkKV8lzWHLm2ymfR3lLRqi0txG-5evliApyk1byd-t6SwVIzV4MM_7CFYl-AYteXb1oklIsHC555LqjSg22C3oBdV4gU7kO8O-cN-O-Awlqe2FwO_rZYM9gJOdfI7H')"></div>
+</div>
+<!-- Screen 3 -->
+<div class="inline-block w-64 h-[500px] glass-card rounded-[32px] overflow-hidden border-white/20 flex-shrink-0 shadow-2xl transition-transform duration-500 hover:scale-110 hover:rotate-x-6 hover:rotate-y-6">
+<div class="w-full h-full bg-cover bg-center" data-alt="Screenshot of a speaking exercise in KhmerKid. A vibrant character image is shown on a card, with a 'Hold to speak' button at the bottom glowing with a cyan pulse. There's a spectral audio waveform at the center. The design is sleek, modern, and high-fidelity, using the brand's purple and cyan palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAolqQiJUg3L8zjsJRY2sa-ZFp0enBvZucEufgcXpNw3wAu-ykFIyjV7-zs5f4hpGgrtFtPPBqvoxcuibT7L7y4xbDge2yoA4jOvLQYxPS2OkKlcJgriztB_26aGnJSCASresH1ZvHW8B-fgkD29MHdUpmVzbfygo3w7SCNUkSxZR9fvvQeDmgtemjvw5msWQCn9mqcki5tgODexSPp_e0M4IcLNfQ0yY8UWnjB7UeMgI__9XtxLGvn')"></div>
+</div>
+<!-- Screen 4 -->
+<div class="inline-block w-64 h-[500px] glass-card rounded-[32px] overflow-hidden border-white/20 flex-shrink-0 shadow-2xl transition-transform duration-500 hover:scale-110 hover:rotate-x-6 hover:rotate-y-6">
+<div class="w-full h-full bg-cover bg-center" data-alt="Screenshot of a mini-game screen in the KhmerKid app. A fun bubble-popping game where bubbles contain Khmer characters. The UI is clean, using semi-transparent glass cards for the score and time remaining. The background is a soft dark indigo with light glows behind the elements." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZ4TtGkQkQlNdwGR8N4Pm1CnnuVFZWmLD7hXZMPkhFquGtHTEXDllF2eI7brwSaS8ZuHUhmqEVVHZzKqKvm8sLRqT7-MjK6-TFKFuQIT03JU2QMrYy6TWqmzkUU5M4nxZMG_pE9AWYT6htQ31geqVSzGNkYRh5amk7euhgnTPNSSP3_szQDbFWHkxNaHokTMDZODW5kIcKEA9_oBPwCu_nX3uOThubM1_kX2aRKmsDTGPnk8_Ohztx')"></div>
+</div>
+<!-- Screen 5 -->
+<div class="inline-block w-64 h-[500px] glass-card rounded-[32px] overflow-hidden border-white/20 flex-shrink-0 shadow-2xl transition-transform duration-500 hover:scale-110 hover:rotate-x-6 hover:rotate-y-6">
+<div class="w-full h-full bg-cover bg-center" data-alt="Screenshot of the user profile and progress page in the KhmerKid app. It shows a list of earned badges and trophies, a line chart of XP earned over the week, and a customizable avatar. Everything is housed in elegant glassmorphism cards with subtle purple borders and deep background layering." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApljA92ygcG7OGpi9u9R1bW04OIxtQQ7VmKgwy6NB_nlBLlX9ZWJk3m58BmT2bYFBdI7TLt_MPKH0W1L0D6se5HhJqfKJwODxXUBiK54G-6FBWPhDaoYD8mOjw2Oa-2OuxDJbufCW6WUQRNdSippK9Z_qhkop09XRzltqIhok0jkw4qDzmsTa8eLanNFOwDLyfXU5drGfEL8Qd--Frm0uspy_y8juMl_6Xd-771i15oBbWyU6KRXw9')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Video Demo -->
+<section class="py-32">
+<div class="max-w-[1000px] mx-auto px-gutter animate-fade-in-up" style="opacity: 0;">
+<div class="relative glass-card rounded-[40px] overflow-hidden border-white/10 group cursor-pointer shadow-2xl">
+<div class="aspect-video bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="A cinematic still of a child happily using an Android tablet to learn Khmer with the KhmerKid app. The lighting is soft and warm, highlighting the high-resolution app interface. The setting is a modern, minimalist living room. The shot is high-fidelity and professional, showcasing the app's ease of use." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYpKoZSjj0uqGgtvXGbcNjuQv6XNeS5Hqq8Ahvg3tiCmZGnyL30JFQKGt3ktMblKW-KTaLRLFqb75lUReRXEpo0sXei9gcLK8fd8gzt3p8iE_qjXE0By1Cv1rHibYRtLYsagnYd_D5gB-Qfz98ypEvork6dq1Dj4o3mqZu-Vz_sQp66FSju_PssOFT5cuWnaObZ7eWwYzebwgfsYKKWc0KdiuYD5tYTizuS3j4ngmDtweD3uDdhEi5')"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-24 h-24 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(208,188,255,0.6)] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-md text-white mb-2">Video Giới thiệu KhmerKid</h3>
+<p class="text-white/70 font-label-md">Khám phá hành trình học tập đầy màu sắc</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Download Section -->
+<section class="py-32 relative" id="download">
+<div class="absolute inset-0 bg-primary/5 z-0" style="opacity: 0;"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10" style="opacity: 0;">
+<div class="glass-card rounded-3xl md:rounded-[48px] p-8 md:p-12 lg:p-20 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none hidden md:block">
+<span class="material-symbols-outlined text-[400px] rotate-12">download</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+<div>
+<h2 class="font-display-xl text-2xl sm:text-3xl md:text-headline-lg mb-6">Tải KhmerKid và bắt đầu học ngay hôm nay</h2>
+<p class="font-body-lg text-on-surface-variant mb-8 md:mb-12">
+                                Ứng dụng hiện đang có sẵn dưới dạng tệp APK cho Android. Trải nghiệm mượt mà, không quảng cáo và hoàn toàn miễn phí cho giáo dục.
+                            </p>
+<div class="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6 mb-8 md:mb-12">
+<button class="bg-primary text-on-primary px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-bold text-lg md:text-xl hover:glow-purple active:scale-95 transition-all flex items-center justify-center gap-3 md:gap-4 shadow-lg" onclick="window.location.href='app-arm64-v8a-release.apk'">
+<span class="material-symbols-outlined text-2xl md:text-3xl" style="font-variation-settings: 'FILL' 1;">download</span>
+<span>Download APK v1.2.0</span>
+</button>
+<div class="p-4 bg-white rounded-xl md:rounded-2xl flex-shrink-0 mx-auto sm:mx-0">
+<!-- QR Code Mockup -->
+<div class="w-28 h-28 md:w-32 md:h-32 bg-slate-200 rounded border-4 md:border-8 border-white">
+<div class="w-full h-full bg-cover" data-alt="A stylized QR code graphic designed to fit the KhmerKid brand. The QR code has rounded modules in a deep purple color, and the center features a small app logo. It is presented on a clean, professional white card with subtle shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnzZpzJG8xSy24fzeZU2DLQubH939VmiHUGwOH82bIYIl3THf1xyEC7TA3HCcrJ9JYGGXxszgcpKoruKMQft5c2jiQi0cq53cllRO8nBFE6WLLYxDsGGdg1fpa0onLeXvgMhVde7Ww2ZeiP7RNmtx5OXzEkbbe8daZqXbI3OxeC5uglYhs7VkPsYoZA_kIjfGKnxJSvvCVl4oteuNySV1hHrP3KvHMe04BOUe_gGS_bKw1uq_8teku')"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-headline-md text-xl md:text-2xl mb-4 md:mb-6">Hướng dẫn cài đặt</h4>
+<div class="space-y-3 md:space-y-4">
+<div class="flex items-start gap-4 md:gap-6 p-4 rounded-xl md:rounded-2xl bg-white/5 border border-white/5">
+<div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold flex-shrink-0 text-sm md:text-base">1</div>
+<p class="font-label-md text-label-md">Tải file APK trực tiếp về điện thoại</p>
+</div>
+<div class="flex items-start gap-4 md:gap-6 p-4 rounded-xl md:rounded-2xl bg-white/5 border border-white/5">
+<div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold flex-shrink-0 text-sm md:text-base">2</div>
+<p class="font-label-md text-label-md">Mở file đã tải trong mục Quản lý tệp</p>
+</div>
+<div class="flex items-start gap-4 md:gap-6 p-4 rounded-xl md:rounded-2xl bg-white/5 border border-white/5">
+<div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold flex-shrink-0 text-sm md:text-base">3</div>
+<p class="font-label-md text-label-md">Cho phép cài đặt từ nguồn không xác định</p>
+</div>
+<div class="flex items-start gap-4 md:gap-6 p-4 rounded-xl md:rounded-2xl bg-white/5 border border-white/5">
+<div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold flex-shrink-0 text-sm md:text-base">4</div>
+<p class="font-label-md text-label-md">Bắt đầu học và khám phá thế giới Khmer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Statistics Section -->
+<section class="py-24 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10 animate-fade-in-up" style="opacity: 0;">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">Thành tựu đạt được</h2>
+<p class="text-on-surface-variant font-body-lg px-4">Con số ấn tượng từ cộng đồng KhmerKid</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+<div class="glass-card p-6 md:p-8 rounded-2xl md:rounded-3xl text-center group hover:scale-105 transition-all duration-300">
+<div class="w-12 h-12 md:w-16 md:h-16 bg-primary/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-4 mx-auto group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl md:text-3xl" style="font-variation-settings: 'FILL' 1;">download</span>
+</div>
+<h3 class="font-display-xl text-3xl md:text-5xl font-bold text-primary mb-2">15K+</h3>
+<p class="text-on-surface-variant font-label-md text-xs md:text-sm">Lượt tải xuống</p>
+</div>
+<div class="glass-card p-6 md:p-8 rounded-2xl md:rounded-3xl text-center group hover:scale-105 transition-all duration-300">
+<div class="w-12 h-12 md:w-16 md:h-16 bg-secondary/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-4 mx-auto group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined text-secondary text-2xl md:text-3xl" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<h3 class="font-display-xl text-3xl md:text-5xl font-bold text-secondary mb-2">8K+</h3>
+<p class="text-on-surface-variant font-label-md text-xs md:text-sm">Người dùng hoạt động</p>
+</div>
+<div class="glass-card p-6 md:p-8 rounded-2xl md:rounded-3xl text-center group hover:scale-105 transition-all duration-300">
+<div class="w-12 h-12 md:w-16 md:h-16 bg-tertiary/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-4 mx-auto group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-2xl md:text-3xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="font-display-xl text-3xl md:text-5xl font-bold text-tertiary mb-2">4.8</h3>
+<p class="text-on-surface-variant font-label-md text-xs md:text-sm">Đánh giá trung bình</p>
+</div>
+<div class="glass-card p-6 md:p-8 rounded-2xl md:rounded-3xl text-center group hover:scale-105 transition-all duration-300">
+<div class="w-12 h-12 md:w-16 md:h-16 bg-primary/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-4 mx-auto group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl md:text-3xl" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<h3 class="font-display-xl text-3xl md:text-5xl font-bold text-primary mb-2">120+</h3>
+<p class="text-on-surface-variant font-label-md text-xs md:text-sm">Bài học</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Thesis Information -->
+<section class="py-24 border-t border-white/10">
+<div class="max-w-container-max mx-auto px-gutter" style="opacity: 0;">
+<div class="glass-card p-12 rounded-3xl border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h3 class="font-headline-md mb-6">Thông tin Đồ án Tốt nghiệp</h3>
+<div class="space-y-4 text-on-surface-variant font-body-md">
+<p class=""><strong class="text-on-surface">Đề tài:</strong> Nền tảng học chữ Khmer thông minh cho học sinh tiểu học 'KhmerKid'</p>
+<p class=""><strong class="text-on-surface">Cơ sở đào tạo:</strong> Trường Đại học Trà Vinh (TVU)</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8 border-l border-white/10 md:pl-12">
+<div>
+<p class="text-primary font-label-sm uppercase mb-2">Sinh viên thực hiện</p>
+<p class="font-headline-md text-lg">Nguyễn Văn A</p>
+<p class="text-on-surface-variant text-sm">MSSV: 110120123</p>
+</div>
+<div>
+<p class="text-secondary font-label-sm uppercase mb-2">Giảng viên hướng dẫn</p>
+<p class="font-headline-md text-lg">ThS. Lê Văn B</p>
+<p class="text-on-surface-variant text-sm">Khoa Kỹ thuật &amp; Công nghệ</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Enhanced Footer -->
+<footer class="w-full py-20 px-gutter bg-surface-container-lowest border-t border-white/10">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<!-- Brand Column -->
+<div class="md:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+<img src="Logo App.png" alt="KhmerKid Logo" class="w-full h-full object-cover"/>
+</div>
+<div class="font-headline-md text-2xl font-bold text-on-surface gradient-text">KhmerKid</div>
+</div>
+<p class="text-on-surface-variant font-body-md mb-6 max-w-md leading-relaxed">
+                        Nền tảng học chữ Khmer thông minh dành cho học sinh tiểu học. Học tập hiệu quả, trực quan và thú vị với công nghệ AI tiên tiến.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:bg-primary/20 hover:border-primary/50 transition-all" href="#">
+<span class="material-symbols-outlined text-on-surface hover:text-primary transition-colors">link</span>
+</a>
+<a class="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:bg-secondary/20 hover:border-secondary/50 transition-all" href="#">
+<span class="material-symbols-outlined text-on-surface hover:text-secondary transition-colors">mail</span>
+</a>
+<a class="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:bg-tertiary/20 hover:border-tertiary/50 transition-all" href="#">
+<span class="material-symbols-outlined text-on-surface hover:text-tertiary transition-colors">share</span>
+</a>
+</div>
+</div>
+
+<!-- Quick Links -->
+<div>
+<h4 class="font-headline-md text-lg font-bold text-on-surface mb-6">Liên kết nhanh</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant font-label-md hover:text-primary transition-colors flex items-center gap-2" href="#features">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+                                Tính năng
+                            </a></li>
+<li><a class="text-on-surface-variant font-label-md hover:text-primary transition-colors flex items-center gap-2" href="#showcase">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+                                Trưng bày
+                            </a></li>
+<li><a class="text-on-surface-variant font-label-md hover:text-primary transition-colors flex items-center gap-2" href="#download">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+                                Tải xuống
+                            </a></li>
+<li><a class="text-on-surface-variant font-label-md hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+                                Hướng dẫn
+                            </a></li>
+</ul>
+</div>
+
+<!-- Support -->
+<div>
+<h4 class="font-headline-md text-lg font-bold text-on-surface mb-6">Hỗ trợ</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant font-label-md hover:text-secondary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+                                Trung tâm trợ giúp
+                            </a></li>
+<li><a class="text-on-surface-variant font-label-md hover:text-secondary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+                                Liên hệ
+                            </a></li>
+<li><a class="text-on-surface-variant font-label-md hover:text-secondary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+                                Chính sách bảo mật
+                            </a></li>
+<li><a class="text-on-surface-variant font-label-md hover:text-secondary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+                                Điều khoản dịch vụ
+                            </a></li>
+</ul>
+</div>
+</div>
+
+<!-- Copyright Bar -->
+<div class="pt-8 border-t border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant font-body-md text-sm text-center md:text-left">
+                        © 2024 KhmerKid. Phát triển bởi Trường Đại học Trà Vinh. All rights reserved.
+                    </p>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span>Made with</span>
+<span class="material-symbols-outlined text-red-500 text-base animate-pulse" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span>in Vietnam</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" aria-label="Back to top">
+<span class="material-symbols-outlined text-on-primary text-2xl" style="font-variation-settings: 'FILL' 1;">keyboard_arrow_up</span>
+</button>
+
+<script>
+        // Header Scroll Effect
+        const header = document.querySelector('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Back to top button visibility
+            const backToTop = document.getElementById('back-to-top');
+            if (currentScroll > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Back to Top Button
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuIcon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+        });
+
+        // Close mobile menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.textContent = 'menu';
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.textContent = 'menu';
+            }
+        });
+
+        // Particle System Implementation
+        const canvas = document.getElementById('hero-particles');
+        const ctx = canvas.getContext('2d');
+        const heroSection = document.getElementById('hero');
+
+        let particles = [];
+        let mouse = { x: null, y: null };
+
+        const colors = ['#ffffff', '#d0bcff', '#4cd7f6', '#ffb95f'];
+        
+        // Detect if mobile device
+        const isMobile = window.innerWidth < 768;
+
+        function initParticles() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            // Reduce particles on mobile for better performance
+            const numberOfParticles = isMobile 
+                ? Math.floor((canvas.width * canvas.height) / 25000) 
+                : Math.floor((canvas.width * canvas.height) / 15000);
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.baseX = this.x;
+                this.baseY = this.y;
+                this.speedX = (Math.random() - 0.5) * (isMobile ? 0.2 : 0.4);
+                this.speedY = (Math.random() - 0.5) * (isMobile ? 0.2 : 0.4);
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.opacity = Math.random() * 0.5 + 0.1;
+                this.parallaxFactor = Math.random() * 30 + 10;
+            }
+
+            update() {
+                // Natural slow movement
+                this.baseX += this.speedX;
+                this.baseY += this.speedY;
+
+                // Mouse parallax effect (only on desktop)
+                if (!isMobile && mouse.x !== null) {
+                    const dx = (mouse.x - canvas.width / 2) / this.parallaxFactor;
+                    const dy = (mouse.y - canvas.height / 2) / this.parallaxFactor;
+                    this.x = this.baseX + dx;
+                    this.y = this.baseY + dy;
+                } else {
+                    this.x = this.baseX;
+                    this.y = this.baseY;
+                }
+
+                // Wrap around screen
+                if (this.baseX < 0) this.baseX = canvas.width;
+                if (this.baseX > canvas.width) this.baseX = 0;
+                if (this.baseY < 0) this.baseY = canvas.height;
+                if (this.baseY > canvas.height) this.baseY = 0;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+                
+                // Subtle glow (reduced on mobile)
+                if (!isMobile) {
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = this.color;
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(initParticles, 250);
+        });
+        
+        if (!isMobile) {
+            heroSection.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+            heroSection.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+        }
+
+        initParticles();
+        animate();
+
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

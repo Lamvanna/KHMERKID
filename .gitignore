@@ -1,0 +1,13 @@
+# IDE
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# APK files (too large for GitHub)
+*.apk

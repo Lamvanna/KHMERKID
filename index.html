@@ -843,8 +843,13 @@
 </div>
 </div>
 <div class="order-1 md:order-2 flex items-center justify-center py-4">
-<div class="w-[200px] sm:w-[230px] md:w-[260px] h-[420px] sm:h-[480px] md:h-[540px] mx-auto glass-card rounded-[36px] border-[10px] border-surface-container-highest shadow-2xl relative overflow-hidden transition-transform duration-500 hover:scale-105">
-<div class="w-full h-full bg-cover bg-top" data-alt="KhmerKid app home screen" style="background-image: url('Screenshot_2026-06-27-02-27-57-93_9411ce698830dceb292d2084e7c1ed83.jpg')"></div>
+<div class="relative">
+<!-- Glow halo behind phone -->
+<div class="absolute inset-0 rounded-[40px] blur-[40px] bg-primary/30 scale-90 translate-y-4"></div>
+<!-- Phone mockup -->
+<div class="float-animation relative w-[200px] sm:w-[230px] md:w-[260px] h-[420px] sm:h-[480px] md:h-[540px] mx-auto rounded-[36px] border-[10px] border-surface-container-highest shadow-[0_30px_80px_rgba(0,0,0,0.6),0_0_40px_rgba(208,188,255,0.3)] overflow-hidden transition-transform duration-500 hover:scale-105 hover:shadow-[0_40px_100px_rgba(0,0,0,0.7),0_0_60px_rgba(208,188,255,0.5)]">
+<div class="w-full h-full bg-cover bg-top" style="background-image: url('Screenshot_2026-06-27-02-27-57-93_9411ce698830dceb292d2084e7c1ed83.jpg')"></div>
+</div>
 </div>
 <!-- Decorative Orbs -->
 <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/20 rounded-full blur-[100px] z-[-1] hidden md:block"></div>
